@@ -169,7 +169,7 @@ public class Hero extends Char {
 	
 	public static final int MAX_LEVEL = 30;
 
-	public static final int STARTING_STR = 10;
+	public static final int STARTING_STR = 14;
 	
 	private static final float TIME_TO_REST		    = 1f;
 	private static final float TIME_TO_SEARCH	    = 2f;
@@ -181,8 +181,8 @@ public class Hero extends Char {
 	public ArrayList<LinkedHashMap<Talent, Integer>> talents = new ArrayList<>();
 	public LinkedHashMap<Talent, Talent> metamorphedTalents = new LinkedHashMap<>();
 	
-	private int attackSkill = 10;
-	private int defenseSkill = 5;
+	private int attackSkill = 20;
+	private int defenseSkill = 10;
 
 	public boolean ready = false;
 	private boolean damageInterrupt = true;
@@ -213,7 +213,7 @@ public class Hero extends Char {
 	public Hero() {
 		super();
 
-		HP = HT = 20;
+		HP = HT = 500;
 		STR = STARTING_STR;
 		
 		belongings = new Belongings( this );
@@ -224,7 +224,7 @@ public class Hero extends Char {
 	public void updateHT( boolean boostHP ){
 		int curHT = HT;
 		
-		HT = 20 + 5*(lvl-1) + HTBoost;
+		HT = 500 + 5*(lvl-1) + HTBoost;
 		float multiplier = RingOfMight.HTMultiplier(this);
 		HT = Math.round(multiplier * HT);
 		
