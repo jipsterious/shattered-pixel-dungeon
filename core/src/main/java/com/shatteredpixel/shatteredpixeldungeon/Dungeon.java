@@ -535,8 +535,8 @@ public class Dungeon {
 	
 	public static boolean souNeeded() {
 		int souLeftThisSet;
-		//3 SOU each floor set
-		souLeftThisSet = 3 - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 5) * 3);
+		//5 SOU each floor set
+		souLeftThisSet = 5 - (LimitedDrops.UPGRADE_SCROLLS.count - (depth / 5) * 5);
 		if (souLeftThisSet <= 0) return false;
 
 		int floorThisSet = (depth % 5);
@@ -545,8 +545,8 @@ public class Dungeon {
 	}
 	
 	public static boolean asNeeded() {
-		//1 AS each floor set
-		int asLeftThisSet = 1 - (LimitedDrops.ARCANE_STYLI.count - (depth / 5));
+		//3 AS each floor set
+		int asLeftThisSet = 3 - (LimitedDrops.ARCANE_STYLI.count - (depth / 5) * 3);
 		if (asLeftThisSet <= 0) return false;
 
 		int floorThisSet = (depth % 5);
