@@ -179,11 +179,11 @@ public class Hero extends Char {
 	
 	public static final int MAX_LEVEL = 30;
 
-	public static final int STARTING_STR = 10;
+	public static final int STARTING_STR = 15;
 	
-	private static final float TIME_TO_REST		    = 1f;
-	private static final float TIME_TO_SEARCH	    = 2f;
-	private static final float HUNGER_FOR_SEARCH	= 6f;
+	private static final float TIME_TO_REST	     = 1f;
+	private static final float TIME_TO_SEARCH    = 2f;
+	private static final float HUNGER_FOR_SEARCH = 6f;
 	
 	public HeroClass heroClass = HeroClass.ROGUE;
 	public HeroSubClass subClass = HeroSubClass.NONE;
@@ -191,8 +191,8 @@ public class Hero extends Char {
 	public ArrayList<LinkedHashMap<Talent, Integer>> talents = new ArrayList<>();
 	public LinkedHashMap<Talent, Talent> metamorphedTalents = new LinkedHashMap<>();
 	
-	private int attackSkill = 10;
-	private int defenseSkill = 5;
+	private int attackSkill = 40;
+	private int defenseSkill = 40;
 
 	public boolean ready = false;
 	public boolean damageInterrupt = true;
@@ -223,7 +223,7 @@ public class Hero extends Char {
 	public Hero() {
 		super();
 
-		HP = HT = 20;
+		HP = HT = 300;
 		STR = STARTING_STR;
 		
 		belongings = new Belongings( this );
@@ -234,7 +234,7 @@ public class Hero extends Char {
 	public void updateHT( boolean boostHP ){
 		int curHT = HT;
 		
-		HT = 20 + 5*(lvl-1) + HTBoost;
+		HT = 300 + 5*(lvl-1) + HTBoost;
 		float multiplier = RingOfMight.HTMultiplier(this);
 		HT = Math.round(multiplier * HT);
 		
@@ -269,10 +269,10 @@ public class Hero extends Char {
 	private static final String SUBCLASS    = "subClass";
 	private static final String ABILITY     = "armorAbility";
 
-	private static final String ATTACK		= "attackSkill";
-	private static final String DEFENSE		= "defenseSkill";
+	private static final String ATTACK	= "attackSkill";
+	private static final String DEFENSE	= "defenseSkill";
 	private static final String STRENGTH	= "STR";
-	private static final String LEVEL		= "lvl";
+	private static final String LEVEL	= "lvl";
 	private static final String EXPERIENCE	= "exp";
 	private static final String HTBOOST     = "htboost";
 	
